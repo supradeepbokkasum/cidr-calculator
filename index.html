@@ -3,38 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading...</title>
-
-  <!-- Page Config -->
+  <title>Loading...</title> <!-- will be replaced via JS -->
+  <link rel="stylesheet" href="https://supradeepbokkasum.github.io/cosmicchutney-assets/css/common.css" />
   <script>
-    window.pageConfig = {
+     window.pageConfig = {
       title: "CosmicChutney - CIDR calculator",
       iframeUrl: "https://507e31fb.cidr-calculator-2kl.pages.dev/",
       headerTitle: "CIDR calculator"
     };
   </script>
-
-  <!-- Load CSS + JS via base64 -->
-  <script>
-    const cssBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvY3NzL2NvbW1vbi5jc3M=";
-    const jsBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvanMvY29tbW9uLmpz";
-
-    // Inject styles
-    const css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = atob(cssBase64);
-    document.head.appendChild(css);
-
-    // Inject JS and call init only after it's loaded
-    const js = document.createElement('script');
-    js.src = atob(jsBase64);
-    js.onload = () => {
-      if (typeof initPage === 'function') {
-        initPage(); // explicitly call this if needed
-      }
-    };
-    document.head.appendChild(js);
-  </script>
+  <script src="https://supradeepbokkasum.github.io/cosmicchutney-assets/js/common.js" defer></script>
 </head>
 <body>
   <div class="header">
@@ -43,6 +21,7 @@
   </div>
 
   <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+
   <div id="menu-container"></div>
 
   <div class="content-wrapper">
@@ -54,9 +33,9 @@
 
   <div class="footer">
     © 2025 CosmicChutney. All Rights Reserved. |
-    <a href="#about">About Us</a> |
-    <a href="#contact">Contact Us</a> |
-    <a href="#ideas">Ideas?</a>
+    <a href="#about" style="color: white; text-decoration: none; margin: 0 10px;">About Us</a> |
+    <a href="#contact" style="color: white; text-decoration: none; margin: 0 10px;">Contact Us</a> |
+    <a href="#ideas" style="color: white; text-decoration: none; margin: 0 10px;">Ideas?</a>
   </div>
 </body>
 </html>
