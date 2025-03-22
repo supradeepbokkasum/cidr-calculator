@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loading...</title> <!-- will be replaced via JS -->
-  <link rel="stylesheet" href="https://supradeepbokkasum.github.io/cosmicchutney-assets/css/common.css" />
+
+  <!-- Dynamically inject styles via JavaScript to avoid revealing external domain -->
+  <script>
+    const cssUrl = atob("aHR0cHM6Ly9jZG4uY29zbWljaGNodXRuZXkuc3BhY2UvbG9hZGVycy9jb21tb24uY3Nz");
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = cssUrl;
+    document.head.appendChild(link);
+  </script>
+
   <script>
      window.pageConfig = {
       title: "CosmicChutney - CIDR calculator",
@@ -12,7 +21,15 @@
       headerTitle: "CIDR calculator"
     };
   </script>
-  <script src="https://supradeepbokkasum.github.io/cosmicchutney-assets/js/common.js" defer></script>
+
+  <!-- Dynamically inject JS -->
+  <script>
+    const jsUrl = atob("aHR0cHM6Ly9jZG4uY29zbWljaGNodXRuZXkuc3BhY2UvbG9hZGVycy9jb21tb24uanM=");
+    const script = document.createElement("script");
+    script.src = jsUrl;
+    script.defer = true;
+    document.head.appendChild(script);
+  </script>
 </head>
 <body>
   <div class="header">
