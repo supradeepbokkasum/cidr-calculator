@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loading...</title> <!-- will be replaced via JS -->
 
-  <script>
-    // Obfuscated base64 URLs
-    const cssBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljaGNodXRuZXktYXNzZXRzL2Nzcy9jb21tb24uY3Nz";
-    const jsBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljaGNodXRuZXktYXNzZXRzL2pzL2NvbW1vbi5qcw==";
+<script>
+  // Corrected obfuscated GitHub URLs
+  const cssBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljaGNodXRuZXktYXNzZXRzL2Nzcy9jb21tb24uY3Nz";
+  const jsBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljaGNodXRuZXktYXNzZXRzL2pzL2NvbW1vbi5qcw==";
 
-    // Decode and inject into DOM
-    const cssLink = document.createElement("link");
-    cssLink.rel = "stylesheet";
-    cssLink.href = atob(cssBase64);
-    document.head.appendChild(cssLink);
+  // Inject CSS
+  const cssLink = document.createElement("link");
+  cssLink.rel = "stylesheet";
+  cssLink.href = atob(cssBase64);
+  document.head.appendChild(cssLink);
 
-    const jsScript = document.createElement("script");
-    jsScript.src = atob(jsBase64);
-    jsScript.defer = true;
-    document.head.appendChild(jsScript);
-  </script>
+  // Inject JS
+  const jsScript = document.createElement("script");
+  jsScript.src = atob(jsBase64);
+  jsScript.defer = true;
+  document.head.appendChild(jsScript);
+</script>
 
   <script>
     window.pageConfig = {
