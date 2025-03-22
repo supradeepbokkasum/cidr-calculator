@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading...</title> <!-- will be replaced via JS -->
+  <title>Loading...</title>
   <link rel="stylesheet" href="https://supradeepbokkasum.github.io/cosmicchutney-assets/css/common.css" />
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    .modal-content button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+      color: #999;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+  </style>
   <script>
-     window.pageConfig = {
+    window.pageConfig = {
       title: "CosmicChutney - CIDR calculator",
       iframeUrl: "https://507e31fb.cidr-calculator-2kl.pages.dev/",
       headerTitle: "CIDR calculator"
@@ -34,8 +86,53 @@
   <div class="footer">
     © 2025 CosmicChutney. All Rights Reserved. |
     <a href="#about" style="color: white; text-decoration: none; margin: 0 10px;">About Us</a> |
-    <a href="#contact" style="color: white; text-decoration: none; margin: 0 10px;">Contact Us</a> |
-    <a href="#ideas" style="color: white; text-decoration: none; margin: 0 10px;">Ideas?</a>
+    <a href="#" onclick="openModal('contactModal')" style="color: white; text-decoration: none; margin: 0 10px;">Contact Us</a> |
+    <a href="#" onclick="openModal('ideaModal')" style="color: white; text-decoration: none; margin: 0 10px;">Ideas?</a>
   </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/xaneoedq" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Idea Modal -->
+  <div id="ideaModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('ideaModal')">&times;</span>
+      <h2>Suggest an Idea</h2>
+      <form action="https://formspree.io/f/xdkegelk" method="POST">
+        <input type="text" name="name" placeholder="Your Name (optional)" />
+        <textarea name="idea" rows="4" placeholder="Your idea..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Optional: Close modals on outside click
+    window.onclick = function(event) {
+      const contact = document.getElementById("contactModal");
+      const idea = document.getElementById("ideaModal");
+      if (event.target === contact) contact.style.display = "none";
+      if (event.target === idea) idea.style.display = "none";
+    }
+  </script>
 </body>
 </html>
