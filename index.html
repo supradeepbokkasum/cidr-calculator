@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading...</title> <!-- will be replaced via JS -->
+  <title>Loading...</title> <!-- Will be overridden by JS -->
 
-<script>
-  // Corrected obfuscated GitHub URLs
-  const cssBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvY3NzL2NvbW1vbi5jc3M=";
-  const jsBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvanMvY29tbW9uLmpz";
-
-  // Inject CSS
-  const cssLink = document.createElement("link");
-  cssLink.rel = "stylesheet";
-  cssLink.href = atob(cssBase64);
-  document.head.appendChild(cssLink);
-
-  // Inject JS
-  const jsScript = document.createElement("script");
-  jsScript.src = atob(jsBase64);
-  jsScript.defer = true;
-  document.head.appendChild(jsScript);
-</script>
-
+  <!-- Page Config: Make this available before common.js loads -->
   <script>
     window.pageConfig = {
       title: "CosmicChutney - CIDR calculator",
       iframeUrl: "https://507e31fb.cidr-calculator-2kl.pages.dev/",
       headerTitle: "CIDR calculator"
     };
+  </script>
+
+  <!-- Obfuscated GitHub CSS/JS (via Base64) -->
+  <script>
+    const cssBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvY3NzL2NvbW1vbi5jc3M=";
+    const jsBase64 = "aHR0cHM6Ly9zdXByYWRlZXBib2trYXN1bS5naXRodWIuaW8vY29zbWljY2h1dG5leS1hc3NldHMvanMvY29tbW9uLmpz";
+
+    // Inject CSS
+    const cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href = atob(cssBase64);
+    document.head.appendChild(cssLink);
+
+    // Inject JS with defer
+    const jsScript = document.createElement("script");
+    jsScript.src = atob(jsBase64);
+    jsScript.defer = true;
+    document.head.appendChild(jsScript);
   </script>
 </head>
 <body>
